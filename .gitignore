@@ -23,6 +23,7 @@
 !/tmp/pids/.keep
 
 
+/vendor/bundle
 /public/assets
 
 # Ignore master key for decrypting credentials and more.
