@@ -1,24 +1,14 @@
-# README
+# How to setup
+```
+$ docker-compose build --force-rm --no-cache
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+$ docker-compose run app bash
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# rails -v
+# bundle -v
+# rails new . --javascript --css=bootstrap --skip-jbuilder --skip-action-mailbox --skip-action-mailer --skip-test --skip-active-storage --skip-action-text --skip-bundle
+# bundle install --path=vendor/bundle
+# bin/rails javascript:install:esbuild        # Auto run `yarn add esbuild`
+# bin/rails turbo:install stimulus:install    # Auto run `yarn add @hotwired/stimulus`
+# bin/rails css:install:bootstrap             # Auto run `yarn add bootstrap`
+```
