@@ -2,6 +2,18 @@
 
 <h1>Muscles</h1>
 
+<%= search_form_for @search do |f| %>
+  <%= f.label :name_cont, "名前" %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :code_cont, "コード" %>
+  <%= f.search_field :code_cont %>
+
+  <%= f.submit %>
+
+  <%= link_to "クリア", muscles_path %>
+<% end %>
+
 <div id="muscles">
   <% @muscles.each do |muscle| %>
     <%= render muscle %>

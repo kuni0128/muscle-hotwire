@@ -3,7 +3,10 @@ class MusclesController < ApplicationController
 
   # GET /muscles
   def index
-    @muscles = Muscle.page(params[:page])
+    @search = Muscle.ransack(params[:q])
+    @search.sorts = "id desc" if @search.sorts.empty?
+
+    @muscles = @search.result.page(params[:page])
   end
 
   # GET /muscles/1
