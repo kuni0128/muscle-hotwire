@@ -14,6 +14,9 @@
   <%= link_to "クリア", muscles_path %>
 <% end %>
 
+<%= sort_link(@search, :name) %>
+<%= sort_link(@search, :code) %>
+
 <div id="muscles">
   <% @muscles.each do |muscle| %>
     <%= render muscle %>
