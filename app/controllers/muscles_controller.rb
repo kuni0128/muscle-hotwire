@@ -3,7 +3,7 @@ class MusclesController < ApplicationController
 
   # GET /muscles
   def index
-    @muscles = Muscle.all
+    @muscles = Muscle.page(params[:page])
   end
 
   # GET /muscles/1
