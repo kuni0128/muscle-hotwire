@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Muscles</h1>
+
+<div id="muscles">
+  <% @muscles.each do |muscle| %>
+    <%= render muscle %>
+    <p>
+      <%= link_to "Show this muscle", muscle %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New muscle", new_muscle_path %>

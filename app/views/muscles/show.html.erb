@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @muscle %>
+
+<div>
+  <%= link_to "Edit this muscle", edit_muscle_path(@muscle) %> |
+  <%= link_to "Back to muscles", muscles_path %>
+
+  <%= button_to "Destroy this muscle", @muscle, method: :delete %>
+</div>
