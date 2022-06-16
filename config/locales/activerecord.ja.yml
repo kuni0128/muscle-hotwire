@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      muscle: 筋肉
+    attributes:
+      muscle:
+        name: 名前
+        name_en: 英語名
