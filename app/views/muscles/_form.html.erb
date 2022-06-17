@@ -1,4 +1,5 @@
-<%= form_with(model: muscle) do |form| %>
+<div class="row py-2 border-top">
+  <%= form_with(model: muscle) do |form| %>
   <% if muscle.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(muscle.errors.count, "error") %> prohibited this muscle from being saved:</h2>
@@ -24,4 +25,5 @@
   <div>
     <%= form.submit %>
   </div>
-<% end %>
+  <% end %>
+</div>
