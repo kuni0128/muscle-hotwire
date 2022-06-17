@@ -27,7 +27,7 @@ class MusclesController < ApplicationController
     @muscle = Muscle.new(muscle_params)
 
     if @muscle.save
-      redirect_to @muscle, notice: "Muscle was successfully created."
+      redirect_to @muscle, notice: "筋肉を登録しました"
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class MusclesController < ApplicationController
   # PATCH/PUT /muscles/1
   def update
     if @muscle.update(muscle_params)
-      redirect_to @muscle, notice: "Muscle was successfully updated."
+      redirect_to @muscle, notice: "筋肉を更新しました"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,7 +45,7 @@ class MusclesController < ApplicationController
   # DELETE /muscles/1
   def destroy
     @muscle.destroy
-    redirect_to muscles_url, notice: "Muscle was successfully destroyed."
+    redirect_to muscles_url, notice: "筋肉を削除しました"
   end
 
   private
