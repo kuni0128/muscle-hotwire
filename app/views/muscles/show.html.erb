@@ -1,0 +1,18 @@
+<div id="<%= dom_id @muscle %>">
+  <p>
+    <strong>名前:</strong>
+    <%= @muscle.name %>
+  </p>
+
+  <p>
+    <strong>コード:</strong>
+    <%= @muscle.code %>
+  </p>
+</div>
+
+<div>
+  <%= link_to "編集", edit_muscle_path(@muscle) %> |
+  <%= link_to "戻る", muscles_path %>
+
+  <%= button_to "削除", @muscle, method: :delete %>
+</div>
