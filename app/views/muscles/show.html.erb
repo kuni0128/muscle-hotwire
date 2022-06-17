@@ -1,10 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<div id="<%= dom_id @muscle %>">
+  <p>
+    <strong>名前:</strong>
+    <%= @muscle.name %>
+  </p>
 
-<%= render @muscle %>
+  <p>
+    <strong>コード:</strong>
+    <%= @muscle.code %>
+  </p>
+</div>
 
 <div>
-  <%= link_to "Edit this muscle", edit_muscle_path(@muscle) %> |
-  <%= link_to "Back to muscles", muscles_path %>
+  <%= link_to "編集", edit_muscle_path(@muscle) %> |
+  <%= link_to "戻る", muscles_path %>
 
-  <%= button_to "Destroy this muscle", @muscle, method: :delete %>
+  <%= button_to "削除", @muscle, method: :delete %>
 </div>
