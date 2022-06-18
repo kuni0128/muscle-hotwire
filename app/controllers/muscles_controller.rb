@@ -56,6 +56,6 @@ class MusclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def muscle_params
-      params.require(:muscle).permit(:name, :name_en)
+      params.require(:muscle).permit(:name, :code)
     end
 end
