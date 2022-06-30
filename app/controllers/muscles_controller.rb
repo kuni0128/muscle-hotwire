@@ -36,7 +36,10 @@ class MusclesController < ApplicationController
   # PATCH/PUT /muscles/1
   def update
     if @muscle.update(muscle_params)
+      # comment-in when render html instead of turbo_stream.erb
       # redirect_to @muscle, notice: "筋肉を更新しました"
+
+      flash.now.notice = "筋肉を更新しました"
     else
       render :edit, status: :unprocessable_entity
     end
