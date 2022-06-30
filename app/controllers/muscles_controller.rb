@@ -36,7 +36,7 @@ class MusclesController < ApplicationController
   # PATCH/PUT /muscles/1
   def update
     if @muscle.update(muscle_params)
-      redirect_to @muscle, notice: "筋肉を更新しました"
+      # redirect_to @muscle, notice: "筋肉を更新しました"
     else
       render :edit, status: :unprocessable_entity
     end
