@@ -45,12 +45,16 @@
         <div class="col-4 d-flex justify-content-end">
           <%= link_to icon_with_text("plus-circle", "登録"),
                       new_muscle_path,
-                      class: "btn btn-outline-primary"
+                      class: "btn btn-outline-primary",
+                      data: { turbo_frame: "new_muscle" }
           %>
         </div>
       </div>
 
-      <%= render @muscles %>
+      <%= turbo_frame_tag "new_muscle" %>
+      <div id="muscles">
+        <%= render @muscles %>
+      </div>
 
       <div class="d-flex justify-content-end mt-3">
         <%= paginate @muscles %>

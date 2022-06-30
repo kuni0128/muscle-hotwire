@@ -27,7 +27,10 @@ class MusclesController < ApplicationController
     @muscle = Muscle.new(muscle_params)
 
     if @muscle.save
-      redirect_to @muscle, notice: "筋肉を登録しました"
+      # comment-in when render html instead of turbo_stream.erb
+      # redirect_to @muscle, notice: "筋肉を登録しました"
+
+      flash.now.notice = "筋肉を登録しました"
     else
       render :new, status: :unprocessable_entity
     end
