@@ -51,7 +51,10 @@ class MusclesController < ApplicationController
   # DELETE /muscles/1
   def destroy
     @muscle.destroy
-    redirect_to muscles_url, notice: "筋肉を削除しました"
+    # comment-in when render html instead of turbo_stream.erb
+    # redirect_to muscles_url, notice: "筋肉を削除しました"
+
+    flash.now.notice = "筋肉を削除しました"
   end
 
   private
