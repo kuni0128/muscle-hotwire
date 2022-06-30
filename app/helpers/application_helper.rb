@@ -15,4 +15,8 @@ module ApplicationHelper
       tag.span(class: "me-2") { emoji } + tag.span { text }
     end
   end
+
+  def turbo_stream_flash
+    turbo_stream.update "flash", partial: "flash"
+  end
 end

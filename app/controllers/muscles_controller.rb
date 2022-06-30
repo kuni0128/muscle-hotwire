@@ -27,7 +27,10 @@ class MusclesController < ApplicationController
     @muscle = Muscle.new(muscle_params)
 
     if @muscle.save
-      redirect_to @muscle, notice: "筋肉を登録しました"
+      # comment-in when render html instead of turbo_stream.erb
+      # redirect_to @muscle, notice: "筋肉を登録しました"
+
+      flash.now.notice = "筋肉を登録しました"
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +39,10 @@ class MusclesController < ApplicationController
   # PATCH/PUT /muscles/1
   def update
     if @muscle.update(muscle_params)
-      redirect_to @muscle, notice: "筋肉を更新しました"
+      # comment-in when render html instead of turbo_stream.erb
+      # redirect_to @muscle, notice: "筋肉を更新しました"
+
+      flash.now.notice = "筋肉を更新しました"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,7 +51,10 @@ class MusclesController < ApplicationController
   # DELETE /muscles/1
   def destroy
     @muscle.destroy
-    redirect_to muscles_url, notice: "筋肉を削除しました"
+    # comment-in when render html instead of turbo_stream.erb
+    # redirect_to muscles_url, notice: "筋肉を削除しました"
+
+    flash.now.notice = "筋肉を削除しました"
   end
 
   private
@@ -56,6 +65,6 @@ class MusclesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def muscle_params
-      params.require(:muscle).permit(:name, :name_en)
+      params.require(:muscle).permit(:name, :code)
     end
 end
